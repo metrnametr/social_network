@@ -1,0 +1,19 @@
+aside.sidebar {
+    position: sticky;
+    top: 84px;
+    background: #fff;
+    min-height: 89vh;
+    max-height: 89vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+button.button-collapsed-sidebar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.ant-layout-sider-trigger{
+    bottom: 20px !important;
+}

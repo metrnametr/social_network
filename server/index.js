@@ -2,36 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const walletsRoute = require('./route/WalletsRoute');
+
 const app = express();
 
 
+
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use(bodyParser.json())
+app.use('/', walletsRoute);
 
-let todo = [
-    {
-        id: 0,
-        text: 'Hello'
-    }
-]
-
-app.get('/', (req, res) => {
-    res.send(todo)
-})
-
-
-app.post('/', (req, res) => {
-    todo = [ ...todo, req.body];
-    res.send(todo)
-})
-
-
-app.delete('/', (req, res) => {
-    console.log(req.body)
-    todo = [ ...todo.filter(itm => itm.id !== req.body.id)];
-    res.send(todo)
-})
 
 app.listen('3000', () => console.log('start'));

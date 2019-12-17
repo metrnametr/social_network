@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -15,6 +16,8 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
+    publicPath: '/',
+    hot: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -22,7 +25,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|tsx|ts)/,
+        test: /\.(js|jsx)/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: ['@babel/plugin-transform-runtime',  ['import', { 'libraryName': 'antd', 'libraryDirectory': 'es', 'style': 'scss' }]]
+                        
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(tsx|ts)/,
         exclude: /node_modules/,
         use: [
           {
@@ -51,7 +68,7 @@ module.exports = {
         use: 'html-loader'
       },
       {
-        test: /(jpg|gif|png|svg)/,
+        test: /(jpg|gif|png|svg|json)/,
         exclude: /node_modules/,
         use: {
           loader: 'file-loader',
@@ -60,6 +77,11 @@ module.exports = {
             outputPath: 'imgs'
           }
         }
+      },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        use: 'json-loader'
       }
     ]
   }

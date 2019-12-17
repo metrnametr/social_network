@@ -1,11 +1,10 @@
 import React from 'react';
-import { Input as AntdInput } from 'antd';
-
+import AntdInput from 'antd/lib/input';
 import './style.scss';
 
-const { Group, Password, Search, TextArea  } = AntdInput;
+const { Password, Search, TextArea  } = AntdInput;
 
-const Input = (props) => {
+const Input = (props: any) => {
   const { typeInput } = props;
   switch(typeInput) {
   case 'search': return <Search { ...props } />;
@@ -15,7 +14,7 @@ const Input = (props) => {
   }
 };
 
-const InputWithLabel = (props) => {
+const InputWithLabel = (props: any) => {
   const { label } = props;
   return (
     <div className="input-container">

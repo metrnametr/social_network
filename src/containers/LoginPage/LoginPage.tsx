@@ -1,18 +1,13 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
-import LoginForm from '../LoginForm';
-import Header from '../../components/Header';
+// import Layout from 'antd/lib/layout';
+import LoginForm from './LoginForm';
+// import Header from '../../components/Header';
 
 import './style.scss';
 
-const LoginPage = () => {
+const LoginPage = (props: any) => {
   return(
-    <Layout>
-      <Header />
-      <Layout.Content>
         <LoginForm />
-      </Layout.Content>
-    </Layout>
   );
 };
 

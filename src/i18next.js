@@ -7,10 +7,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // have a look at the Quick start guide 
 // for passing in lng and translations on init
 
+// const ruLocales = require('./locales/ru/translation.json');
+// const enLocales = require('./locales/en/translation.json');
+
+
 i18n
   // load translation using xhr -> see /public/locales
   // learn more: https://github.com/i18next/i18next-xhr-backend
-  .use(Backend)
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
   .use(LanguageDetector)
@@ -22,6 +25,7 @@ i18n
     fallbackLng: 'en',
     debug: true,
     whitelist: ['ru'],
+    // resources: { ru: ruLocales, en: enLocales },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     }

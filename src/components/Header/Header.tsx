@@ -1,17 +1,18 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import Layout from 'antd/lib/layout';
+import Menu from 'antd/lib/menu'
 
 import './style.scss';
 
-const Header = () => {
+
+const Header = (props: any) => {
   return (
     <>
-      <Layout.Header style={ { display: 'flex'} }>
+      <Layout.Header  className="header">
         <div className="logo"> The Saded</div>
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={ ['2'] }
           style={ { lineHeight: '64px' } }
         >
           <Menu.Item key="1">nav 1</Menu.Item>

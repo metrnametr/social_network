@@ -1,8 +1,7 @@
-import React from 'react';
-import { Button as AntdButton } from 'antd';
-
+import * as React from 'react';
+import AntdButton from 'antd/lib/button';
 import './style.scss';
 
-const Button = (props) => <AntdButton { ...props }>{props.children}</AntdButton>;
+const Button = (props: any) => <AntdButton { ...props }>{props.children}</AntdButton>;
 
 export default Button;

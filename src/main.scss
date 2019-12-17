@@ -1,1 +1,26 @@
 @import '~antd/dist/antd.css';
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #eeeeee;
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(156, 155, 155, 0.459); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 155, 155, 0.459);
+  }
+

@@ -28,6 +28,7 @@ module.exports = {
         "linebreak-style": [ "error", "unix" ],
         "quotes": [ "error", "single" ],
         "semi": [ "error", "always"],
+        "max-len": ["error", 132 ],
         "react/jsx-boolean-value": 0,
         "react/jsx-closing-bracket-location": 1,
         "react/jsx-curly-spacing": [2, "always"],

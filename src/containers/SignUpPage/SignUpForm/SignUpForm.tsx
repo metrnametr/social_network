@@ -1,11 +1,12 @@
 import React from 'react';
 import { Form } from 'antd';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import { Link } from 'react-router-dom';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
 
 import './style.scss';
 
-const SignUpForm = (props) => {
+const SignUpForm = (props: any) => {
   return (
     <Form>
       <div className="login-container">
@@ -16,8 +17,8 @@ const SignUpForm = (props) => {
           <Input typeInput="password" label="Repeat password" />
         </div>
         <div className="login_buttons">
-          <Button type="primary">Log In</Button>
-          <Button type="">Lets start</Button>
+          <Button type="" className="btn btn-success-join">Lets start</Button>
+          <div>Have account? <Link to="/login">Login</Link></div>
         </div>
       </div>
     </Form>
